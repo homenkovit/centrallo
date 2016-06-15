@@ -74,7 +74,8 @@ gulp.task('sass-compile', function () {
         }))
     .pipe(postcss([
       assets({
-        loadPaths: ['dev/images/']
+        basePath: './dev/',
+        loadPaths: ['images/']
       })
     ]))
     // .pipe(concat("main.min.css"))

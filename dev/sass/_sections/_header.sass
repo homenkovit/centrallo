@@ -1,0 +1,31 @@
+.main-header
+  background-color: #3c434a
+  min-height: 60px
+  line-height: 60px
+  font-size: 13px
+  letter-spacing: 0.3px
+  text-transform: uppercase
+  &__wrap
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+.menu
+  list-style-type: none
+  display: flex
+  justify-content: space-around
+  &__item
+    margin-left: 10px
+  &__link
+    color: white
+
+.logo
+  background-image: resolve('logo.png')
+  background-repeat: no-repeat
+  width: width('logo.png')
+  height: height('logo.png')
+  transform: translateY(-5px)
+
+.sign-up
+  & > a
+    text-decoration: underline

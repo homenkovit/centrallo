@@ -67,13 +67,50 @@ a
 
 .main
   flex: 1
+  background-image: resolve('bg.png')
 
+//-----------------------Common Styles----------------------------------
+
+.menu
+  list-style-type: none
+  display: flex
+  justify-content: space-between
+  align-items: center
+  &__item
+    margin-left: 20px
+  &__link
+    color: $menu-text-color
+    &_tw, &_fb
+      display: block
+      background-repeat: no-repeat
+    &_tw
+      background-image: resolve('tw.png')
+      width: width('tw.png')
+      height: height('tw.png')
+    &_fb
+      background-image: resolve('fb.png')
+      width: width('fb.png')
+      height: height('fb.png')
+  &_log-in
+    .menu__link
+      color: white
+      &:hover
+        color: $accent-color
+
+.logo
+  background-image: resolve('logo.png')
+  background-repeat: no-repeat
+  width: width('logo.png')
+  height: height('logo.png')
+  transform: translateY(-5px)
 
 // -----------------------Custom Styles Here-----------------------
 
 //layout Start
 
 @import "./_sections/_header"
+@import "./_sections/note"
+@import "./_sections/_footer"
 
 //layout End
 

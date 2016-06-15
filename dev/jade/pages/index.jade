@@ -6,8 +6,38 @@ block title
 block content
   article.main
     .container
-      article.note
+      article.note.note_priority
         .note__wrap
-          p.note__date Nov 22
-          p.note__status Protected
+          section.note__content
+            form.form_checklist(action="#")
+              p
+                input#1(type="checkbox")
+                label(for="1") Referral Accepted and Invited invitations not sorted by A-Z
+              p
+                input#2(type="checkbox")
+                label(for="2") Inbox shows me 242 items - that includes Done items; Only show me active
+              p
+                input#3(type="checkbox")
+                label(for="3") Inbox defaults to show done items - it should not
+              p
+                input#4(type="checkbox")
+                label(for="4") Lists default to Show Done - they should not
+              p
+                input#5(type="checkbox")
+                label(for="5") Recent view should sort by Created and show no Done items
+          section.note__bottom
+            p.note__date 2h ago
+            .note__share-block
+              a.note__share(href="#")
+              a.note__copy-link(href="#")
+      article.note.note_protected
+        .note__wrap
+          section.note__bottom
+            p.note__date Nov 22
+            p.note__status Protected
+      article.note.note_archived
+        .note__wrap
+          section.note__bottom
+            p.note__date Nov 21
+            p.note__status Archived
     

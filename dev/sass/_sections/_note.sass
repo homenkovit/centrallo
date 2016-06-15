@@ -1,0 +1,138 @@
+.note
+  width: 100%
+  // min-height: 78px
+  // line-height: 78px
+  background-color: white
+  font-size: 16px
+  color: #aeb4ba
+  border-radius: 5px
+  margin: 15px 0
+  position: relative
+  overflow: hidden
+  &_protected, &_archived, &_priority
+    &::before, &::after
+      content: ''
+      display: block
+      position: absolute
+    &::after
+      top: 7px
+      right: 5px
+      background-repeat: no-repeat
+    &::before
+      top: 0
+      right: 0
+      width: 0
+      height: 0
+      border-style: solid
+      border-width: 0 48px 48px 0
+  &_protected
+    .note__status
+      color: $links-color
+    &::before
+      border-color: transparent #3c434a transparent
+    &::after
+      background-image: resolve('lock.png')
+      width: width('lock.png')
+      height: height('lock.png')
+  &_archived
+    opacity: 0.7
+    .note__status
+      color: #858585
+    &::before
+      border-color: transparent #979da3 transparent
+    &::after
+      background-image: resolve('archive.png')
+      width: width('archive.png')
+      height: height('archive.png')
+  &_priority
+    &::before
+      border-color: transparent #ef4b2b transparent
+    &::after
+      background-image: resolve('star.png')
+      width: width('star.png')
+      height: height('star.png')
+  &__wrap
+    padding: 0 30px
+  &__content
+    padding-top: 30px
+  &__bottom
+    min-height: 78px
+    line-height: 78px
+  &__bottom, &__share-block
+    display: flex
+    justify-content: space-between
+    align-items: center
+  &__share-block
+    a
+      margin-left: 20px
+  &__share, &__copy-link
+    display: block
+    background-repeat: no-repeat
+  &__share
+    background-image: resolve('share.png')
+    width: width('share.png')
+    height: height('share.png')
+  &__copy-link
+    background-image: resolve('copy-link.png')
+    width: width('copy-link.png')
+    height: height('copy-link.png')
+
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked
+  position: absolute
+  left: -9999px
+
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label
+  position: relative
+  padding-left: 20px
+  cursor: pointer
+
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before 
+  content: ''
+  position: absolute
+  left: 0 
+  top: 0
+  box-sizing: border-box
+  width: 14px 
+  height: 14px
+  border: 2px solid #b8b8b8
+  background: #ffffff
+  border-radius: 2px
+
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after 
+  content: ''
+  position: absolute
+  top: 2px
+  left: 2px
+  transition: all .2s
+  background-image: resolve('check.png')
+  width: width('check.png')
+  height: height('check.png')
+
+[type="checkbox"]:not(:checked) + label:after 
+  opacity: 0
+  transform: scale(0)
+
+[type="checkbox"]:checked + label:after 
+  opacity: 1
+  transform: scale(1)
+
+[type="checkbox"]:checked + label:before
+  background-color: #3b99fc
+  border: none
+
+[type="checkbox"]:disabled:not(:checked) + label:before,
+[type="checkbox"]:disabled:checked + label:before 
+  box-shadow: none
+  border-color: #bbb
+  background-color: #ddd
+
+[type="checkbox"]:disabled:checked + label:after 
+  color: #999
+
+[type="checkbox"]:disabled + label 
+  color: #aaa
+

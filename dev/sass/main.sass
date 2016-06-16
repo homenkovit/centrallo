@@ -17,7 +17,6 @@ html, body
   box-sizing: border-box
 
 body
-  background: $body-color
   font: 14px $content-font
   -webkit-font-smoothing: antialiased
 
@@ -54,20 +53,22 @@ a
   height: auto
 
 .container
-  width: $container-width
+  max-width: $container-width
   margin: 0 auto
   position: relative
+  padding: 0 30px
 
 .wrapper
   display: flex
   flex-direction: column
   min-height: 100vh
-  min-width: $container-width + 30
+  // min-width: $container-width + 30
   margin: 0
 
 .main
   flex: 1
   background-image: resolve('bg.png')
+  padding: 30px 0 90px
 
 //-----------------------Common Styles----------------------------------
 
@@ -76,12 +77,15 @@ a
   display: flex
   justify-content: space-between
   align-items: center
+  flex-wrap: wrap
   &__item
     margin-left: 20px
+    &:first-child
+      margin-left: 0
   &__link
     color: $menu-text-color
+    display: block
     &_tw, &_fb
-      display: block
       background-repeat: no-repeat
     &_tw
       background-image: resolve('tw.png')
@@ -98,18 +102,21 @@ a
         color: $accent-color
 
 .logo
-  background-image: resolve('logo.png')
-  background-repeat: no-repeat
+  display: block
   width: width('logo.png')
   height: height('logo.png')
-  transform: translateY(-5px)
+  img
+    transform: translateY(-5px)
+    width: 100%
+    height: 100%
 
 // -----------------------Custom Styles Here-----------------------
 
 //layout Start
 
 @import "./_sections/_header"
-@import "./_sections/note"
+@import "./_sections/_person"
+@import "./_sections/_note"
 @import "./_sections/_footer"
 
 //layout End

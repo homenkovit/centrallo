@@ -7,7 +7,7 @@
 
 // -----------------------Load plugins ( path to the css-file of the plugins (!rename to .SASS before importing!) )-----------------------
 
-@import "../plugins/normalize/normalize"
+@import "../plugins/normalize-css/normalize"
 
 
 // -----------------------Basic styles-----------------------
@@ -62,8 +62,8 @@ a
   display: flex
   flex-direction: column
   min-height: 100vh
-  // min-width: $container-width + 30
   margin: 0
+  position: relative
 
 .main
   flex: 1
@@ -117,6 +117,7 @@ a
 @import "./_sections/_header"
 @import "./_sections/_person"
 @import "./_sections/_note"
+@import "./_sections/_popup"
 @import "./_sections/_footer"
 
 //layout End

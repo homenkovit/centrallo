@@ -98,7 +98,7 @@ gulp.task('concat-js', function () {
 
 /* -------- concat js plugins -------- */
 gulp.task('concat-js-plugins', function() {
-  return gulp.src([
+  return gulp.src(['./dev/plugins/jquery/dist/jquery.min.js'
     ])
     .pipe(plumber())
     .pipe(concat('plugins.min.js'))

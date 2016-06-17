@@ -1,0 +1,79 @@
+.overlay, .popup
+  display: none
+
+.overlay
+  z-index: 900
+  cursor: pointer
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background-color: rgba(0, 0, 0, 0.5)
+
+.popup
+  z-index: 999
+  position: fixed
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  min-width: 280px
+  width: 40%
+  max-width: 400px
+  text-align: center
+  &-header
+    min-height: 60px
+    line-height: 60px
+    background-color: white
+    position: relative
+  &__title
+    font-size: 22px
+    color: #404143
+  &__close
+    display: block
+    position: absolute
+    top: 12px
+    right: 12px
+    background-image: resolve('close_popup.png')
+    width: width('close_popup.png')
+    height: height('close_popup.png')
+    transition: all 0.3s ease
+    &:hover
+      transform: scale(1.2)
+  &__content
+    background-color: #f0f5fa
+    padding: 30px 40px
+    display: flex
+    flex-direction: column
+    align-items: center
+  &__copy-link
+    font-size: 20px
+    line-height: 24px
+    color: white
+    background-color: $links-color
+    &:hover
+      color: white
+  &__social
+    margin-top: 30px
+    .social
+      width: 204px
+      padding-left: 0
+      &__item
+        width: 36px
+        height: 36px
+        border-radius: 50%
+        position: relative
+        margin-left: 0
+        &_fb
+          background-color: #3a589c
+        &_tw
+          background-color: #29a9e1
+        &_vk
+          background-color: #5a7ba0
+        &_linkedin
+          background-color: #007bb8
+      &__link
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)

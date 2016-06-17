@@ -1,0 +1,338 @@
+.notes-header
+  display: flex
+  justify-content: space-between
+  align-items: center
+  flex-wrap: wrap
+  border: none
+  margin-top: 20px
+  &__title
+    font-size: 20px
+    color: #2c2f31
+    font-weight: normal
+  &__buttons
+    display: flex
+    justify-content: space-between
+  &__button
+    min-height: 32px
+    line-height: 32px
+    border-radius: 3px
+    background-color: $links-color
+    color: white
+    font-size: 13px
+    border: none
+    min-width: 150px
+    cursor: pointer
+    &_share
+      display: none
+      color: #3c434a
+      background-color: white
+      &::before
+       content: ''
+       display: inline-block
+       vertical-align: middle
+       padding-right: 8px
+       width: 14px
+       height: 14px
+       background-image: resolve('share.png')
+       background-repeat: no-repeat
+       background-size: 14px 14px
+
+.note
+  width: 100%
+  background-color: white
+  font-size: 16px
+  color: #aeb4ba
+  border-radius: 5px
+  margin: 15px 0
+  position: relative
+  &_protected, &_archived, &_priority
+    &::before, &::after
+      content: ''
+      display: block
+      position: absolute
+    &::after
+      top: 7px
+      right: 5px
+      background-repeat: no-repeat
+    &::before
+      top: 0
+      right: 0
+      width: 0
+      height: 0
+      border-style: solid
+      border-width: 0 48px 48px 0
+  &_protected
+    .note__status
+      color: $links-color
+    &::before
+      border-color: transparent #3c434a transparent
+    &::after
+      background-image: resolve('lock.png')
+      width: width('lock.png')
+      height: height('lock.png')
+  &_archived
+    opacity: 0.7
+    .note__status
+      color: #858585
+    &::before
+      border-color: transparent #979da3 transparent
+    &::after
+      background-image: resolve('archive.png')
+      width: width('archive.png')
+      height: height('archive.png')
+  &_priority
+    &::before
+      border-color: transparent #ef4b2b transparent
+    &::after
+      background-image: resolve('star.png')
+      width: width('star.png')
+      height: height('star.png')
+  &__wrap
+    padding: 0 30px
+  &__content
+    padding-top: 30px
+  &__bottom
+    min-height: 78px
+    line-height: 78px
+  &__bottom, &__share-block
+    display: flex
+    justify-content: space-between
+    align-items: center
+  &__share-block
+    a
+      margin-left: 20px
+  &__share, &__copy-link
+    display: block
+    background-repeat: no-repeat
+  &__share
+    background-image: resolve('share.png')
+    width: width('share.png')
+    height: height('share.png')
+  &__copy-link
+    background-image: resolve('copy-link.png')
+    width: width('copy-link.png')
+    height: height('copy-link.png')
+    position: relative
+    display: inline
+    span
+      position: absolute
+      left: -54px
+      bottom: 30px
+      font-size: 14px
+      line-height: 40px
+      text-align: center
+      color: white
+      background-color: #404040
+      opacity: 0.4
+      display: block
+      width: 134px
+      height: 40px
+      z-index: 999
+      border-radius: 4px
+      visibility: hidden
+      transform: scale(0)
+      transition: all 0.2s ease
+      &::after
+        content: ''
+        position: absolute
+        top: 100%
+        left: 50%
+        margin-left: -6px
+        width: 0
+        height: 0
+        border-top: 6px solid #404040
+        border-right: 6px solid transparent
+        border-left: 6px solid transparent
+    &:hover span
+      visibility: visible
+      transform: scale(1)
+  &__paragraph
+    color: $text-color
+    line-height: 26px
+    margin-bottom: 30px
+
+.form_checklist
+  p
+    padding-left: 25px
+    margin-bottom: 15px
+
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked
+  position: absolute
+  left: -9999px
+
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label
+  position: relative
+  cursor: pointer
+  color: $text-color
+  &:hover
+    color: $titles-text-color
+
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before 
+  content: ''
+  position: absolute
+  left: -25px 
+  top: 0
+  box-sizing: border-box
+  width: 14px 
+  height: 14px
+  border: 2px solid #b8b8b8
+  background: #ffffff
+  border-radius: 2px
+
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after 
+  content: ''
+  position: absolute
+  top: 2px
+  left: -23px
+  transition: all .2s
+  background-image: resolve('check.png')
+  width: width('check.png')
+  height: height('check.png')
+
+[type="checkbox"]:not(:checked) + label:after 
+  opacity: 0
+  transform: scale(0)
+
+[type="checkbox"]:checked + label:after 
+  opacity: 1
+  transform: scale(1)
+
+[type="checkbox"]:checked + label:before
+  background-color: #3b99fc
+  border: none
+
+[type="checkbox"]:disabled:not(:checked) + label:before,
+[type="checkbox"]:disabled:checked + label:before 
+  box-shadow: none
+  border-color: #bbb
+  background-color: #ddd
+
+[type="checkbox"]:disabled:checked + label:after 
+  color: #999
+
+[type="checkbox"]:disabled + label 
+  color: #aaa
+
+.list
+  display: flex
+  justify-content: space-between
+  align-items: center
+  flex-wrap: wrap
+  min-height: 50px
+  border-top: 1px solid #bdbdbd
+  position: relative
+  &:first-child
+    border: none
+  &::before
+    content: ''
+    display: inline-block
+    position: absolute
+    top: 50%
+    left: 0
+    transform: translateY(-60%)
+    background-image: resolve('list.png')
+    width: width('list.png')
+    height: height('list.png')
+  &:hover::before
+    background-image: resolve('list.svg')
+  &__title
+    color: $titles-text-color
+    padding-left: 30px
+    font-weight: 700
+  &__desc
+    display: flex
+    justify-content: space-between
+  &__date
+    margin-left: 60px
+  &__amount-items, &__date
+    color: #858585
+
+.media
+  list-style-type: none
+  padding: 0
+  &__item
+    display: inline-block
+    margin-right: 15px
+    margin-bottom: 15px
+  &__link
+    display: block
+    min-height: 140px
+    img
+      width: 100%
+      height: 100%
+    &_video
+      position: relative
+      &:hover
+        &::before, &::after
+          content: ''
+          display: block
+          position: absolute
+          top: 50%
+          left: 50%
+        &::before
+          transform: translate(-50%, -50%)
+          width: 59px
+          height: 59px
+          background-color: #00adff
+          border-radius: 50%
+          opacity: 0.9
+        &::after
+          transform: translate(-30%, -50%)
+          width: width('play.svg')
+          height: height('play.svg')
+          background-image: resolve('play.svg')
+.date-of-due
+  @extend .list
+  padding-left: 30px
+  color: #858585
+  &::before
+    @extend .list::before
+    background-image: resolve('calendar.svg')
+    width: width('calendar.svg')
+    height: height('calendar.svg')
+  &:hover::before
+    background-image: resolve('calendar.svg')
+
+section
+  border-top: 1px solid #bdbdbd
+  &:first-child, &:last-child
+    border: none
+
+.address
+  padding: 30px 0
+  display: flex
+  flex-wrap: wrap
+  &__text
+    margin-left: 20px
+  &__title
+    color: $text-color
+    line-height: 29px
+    font-weight: 700
+  &__street
+    color: #858585
+    padding-bottom: 10px
+  &__link
+    color: #00adff
+  &__street, &__link
+    line-height: 28px
+
+.files
+  list-style-type: none
+  padding: 0
+  padding-top: 10px
+  display: flex
+  justify-content: flex-start
+  flex-wrap: wrap
+  &__item
+    padding: 0 20px 15px
+  &__link
+    display: flex
+    flex-direction: column
+    align-items: center
+    p
+      padding-top: 15px
+      color: #333333

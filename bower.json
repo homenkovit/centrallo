@@ -11,6 +11,7 @@
     "dev/plugins"
   ],
   "dependencies": {
-    "normalize-css": "^4.1.1"
+    "normalize-css": "^4.1.1",
+    "jquery": "^3.0.0"
   }
 }

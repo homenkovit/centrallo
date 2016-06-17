@@ -1,0 +1,74 @@
+.main-header
+  background-color: #3c434a
+  font-size: 13px
+  text-transform: uppercase
+  color: $menu-text-color
+  &__wrap
+    min-height: 60px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    flex-wrap: wrap
+
+.sign-up
+  letter-spacing: 0.3px
+  & > a
+    text-decoration: underline
+
+.tablet-header, .mobile-header
+  display: none
+  background-color: $links-color
+  color: white
+  &__wrap
+    @extend .main-header__wrap
+.tablet, .mobile
+  &__logo
+    height: 33px
+  &__logo, &__text, &__buttons
+    display: flex
+  &__text
+    margin-left: 7px
+    flex-direction: column
+    justify-content: space-between
+  &__buttons
+    align-items: center
+  &__title
+    font-size: 14px
+    font-weight: 700
+  &__close
+    background-image: resolve('close.png')
+    width: width('close.png')
+    height: height('close.png')
+  &__download
+    height: 28px
+    border: none
+    border-radius: 3px
+    color: #00adff
+    background-color: white
+    cursor: pointer
+.tablet
+  &__desc
+    font-size: 12px
+  &__close
+    margin-left: 40px
+  &__download
+    width: 110px
+    font-size: 13px
+.mobile
+  &__desc
+    font-size: 11px
+  &__close
+    margin-left: 12px
+  &__download
+    width: 90px
+    font-size: 12px
+.logo_tablet, .logo_mobile
+  img
+    width: 100%
+    height: 100%
+.logo_tablet
+  width: width('logo_tablet.png')
+  height: height('logo_tablet.png')
+.logo_mobile
+  width: width('logo_mobile.png')
+  height: height('logo_mobile.png')

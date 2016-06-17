@@ -7,7 +7,7 @@
 
 // -----------------------Load plugins ( path to the css-file of the plugins (!rename to .SASS before importing!) )-----------------------
 
-@import "../plugins/normalize/normalize"
+@import "../plugins/normalize-css/normalize"
 
 
 // -----------------------Basic styles-----------------------
@@ -17,8 +17,7 @@ html, body
   box-sizing: border-box
 
 body
-  background: $body-color
-  font: 14px/1.41 $content-font
+  font: 14px $content-font
   -webkit-font-smoothing: antialiased
 
 table
@@ -54,26 +53,72 @@ a
   height: auto
 
 .container
-  width: $container-width
+  max-width: $container-width
   margin: 0 auto
   position: relative
+  padding: 0 30px
 
 .wrapper
   display: flex
   flex-direction: column
   min-height: 100vh
-  min-width: $container-width + 30
   margin: 0
+  position: relative
 
 .main
   flex: 1
+  background-image: resolve('bg.png')
+  padding: 30px 0 90px
 
+//-----------------------Common Styles----------------------------------
+
+.menu
+  list-style-type: none
+  display: flex
+  justify-content: space-between
+  align-items: center
+  flex-wrap: wrap
+  &__item
+    margin-left: 20px
+    &:first-child
+      margin-left: 0
+  &__link
+    color: $menu-text-color
+    display: block
+    &_tw, &_fb
+      background-repeat: no-repeat
+    &_tw
+      background-image: resolve('tw.png')
+      width: width('tw.png')
+      height: height('tw.png')
+    &_fb
+      background-image: resolve('fb.png')
+      width: width('fb.png')
+      height: height('fb.png')
+  &_log-in
+    .menu__link
+      color: white
+      &:hover
+        color: $accent-color
+
+.logo
+  display: block
+  width: width('logo.png')
+  height: height('logo.png')
+  img
+    transform: translateY(-5px)
+    width: 100%
+    height: 100%
 
 // -----------------------Custom Styles Here-----------------------
 
 //layout Start
 
-
+@import "./_sections/_header"
+@import "./_sections/_person"
+@import "./_sections/_note"
+@import "./_sections/_popup"
+@import "./_sections/_footer"
 
 //layout End
 

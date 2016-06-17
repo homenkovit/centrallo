@@ -8,6 +8,10 @@
   &__title
     font-size: 20px
     color: #2c2f31
+    font-weight: normal
+  &__buttons
+    display: flex
+    justify-content: space-between
   &__button
     min-height: 32px
     line-height: 32px
@@ -16,8 +20,22 @@
     color: white
     font-size: 13px
     border: none
-    padding: 0 20px
+    min-width: 150px
     cursor: pointer
+    &_share
+      display: none
+      color: #3c434a
+      background-color: white
+      &::before
+       content: ''
+       display: inline-block
+       vertical-align: middle
+       padding-right: 8px
+       width: 14px
+       height: 14px
+       background-image: resolve('share.png')
+       background-repeat: no-repeat
+       background-size: 14px 14px
 
 .note
   width: 100%
@@ -136,6 +154,7 @@
 
 .form_checklist
   p
+    padding-left: 25px
     margin-bottom: 15px
 
 [type="checkbox"]:not(:checked),
@@ -146,8 +165,8 @@
 [type="checkbox"]:not(:checked) + label,
 [type="checkbox"]:checked + label
   position: relative
-  padding-left: 20px
   cursor: pointer
+  color: $text-color
   &:hover
     color: $titles-text-color
 
@@ -155,7 +174,7 @@
 [type="checkbox"]:checked + label:before 
   content: ''
   position: absolute
-  left: 0 
+  left: -25px 
   top: 0
   box-sizing: border-box
   width: 14px 
@@ -169,7 +188,7 @@
   content: ''
   position: absolute
   top: 2px
-  left: 2px
+  left: -23px
   transition: all .2s
   background-image: resolve('check.png')
   width: width('check.png')
@@ -211,7 +230,7 @@
     border: none
   &::before
     content: ''
-    display: block
+    display: inline-block
     position: absolute
     top: 50%
     left: 0
@@ -222,9 +241,12 @@
   &:hover::before
     background-image: resolve('list.svg')
   &__title
-    flex: 1
     color: $titles-text-color
     padding-left: 30px
+    font-weight: 700
+  &__desc
+    display: flex
+    justify-content: space-between
   &__date
     margin-left: 60px
   &__amount-items, &__date
@@ -239,7 +261,10 @@
     margin-bottom: 15px
   &__link
     display: block
-    height: 140px
+    min-height: 140px
+    img
+      width: 100%
+      height: 100%
     &_video
       position: relative
       &:hover
@@ -287,6 +312,7 @@ section
   &__title
     color: $text-color
     line-height: 29px
+    font-weight: 700
   &__street
     color: #858585
     padding-bottom: 10px
@@ -300,13 +326,14 @@ section
   padding: 0
   padding-top: 10px
   display: flex
-  justify-content: space-around
+  justify-content: flex-start
   flex-wrap: wrap
   &__item
-    padding: 0 20px
+    padding: 0 20px 15px
   &__link
     display: flex
     flex-direction: column
     align-items: center
     p
       padding-top: 15px
+      color: #333333

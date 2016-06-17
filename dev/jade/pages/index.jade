@@ -25,7 +25,9 @@ block content
           a.social__copy-link(href="#") http://cll.io/a6lnu
       section.notes-header
         h1.notes-header__title Post-release checklist 2015.02.26
-        button.notes-header__button Add to my Centrallo
+        .notes-header__buttons
+          button.notes-header__button Add to my Centrallo
+          button.notes-header__button.notes-header__button_share Share
       article.note.note_priority
         .note__wrap
           section.note__content
@@ -56,12 +58,14 @@ block content
           section.note__content
             a.list(href="#")
               p.list__title Children
-              p.list__amount-items 12 items
-              p.list__date 7h ago
+              .list__desc
+                p.list__amount-items 12 items
+                p.list__date 7h ago
             a.list(href="#")
               p.list__title The longest title in the world
-              p.list__amount-items 3 items
-              p.list__date Mar 13
+              .list__desc
+                p.list__amount-items 3 items
+                p.list__date Mar 13
           section.note__bottom
             p.note__date 2h ago
             .note__share-block

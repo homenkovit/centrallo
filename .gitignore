@@ -13,8 +13,7 @@ Thumbs.db
 
 originals
 
-dev/plugins
 node_modules
-prod
+build
 
 .gitkeep

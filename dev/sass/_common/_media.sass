@@ -9,20 +9,30 @@
 /* Medium Devices, Desktops */
 // @media only screen and (max-width : 992px)
 
-
-
+@media only screen and (max-width : 828px)
+  .address__text
+    width: 270px
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
   .tablet-header
     display: block
 
-  .address__text
-    width: 270px
-
   .note
     &_protected, &_archived
       display: none
+
+@media only screen and (max-width : 710px)
+  .address
+    &__maps
+      width: 100%
+      iframe
+        width: 100%
+    &__text
+      margin-top: 10px
+      margin-left: 0
+    &__title
+      line-height: 21px
 
 @media only screen and (max-width : 670px)
   .main-header__wrap
@@ -97,16 +107,6 @@
     border-top: 1px solid #bdbdbd !important
     &::before
       transform: translateY(-60%) !important
-
-  .address
-    &__maps
-      width: 100%
-      iframe
-        width: 100%
-    &__text
-      margin-left: 0
-    &__title
-      line-height: 21px
       
   .list
     border: none

@@ -4,10 +4,8 @@ $(document).ready(function() {
       overlay = $('.overlay'),
       popupCloseBtn = $('.popup__close'),
       shareBtn = $('.share-btn'),
-      tabletHeader = $('.tablet-header'),
-      mobileHeader = $('.mobile-header'),
-      tabletClose = $('.tablet__close'),
-      mobileClose = $('.mobile__close'),
+      storeHeader = $('.store-header'),
+      storeClose = $('.store__close'),
       noteBlock = $('.note');
 
 
@@ -35,16 +33,10 @@ $(document).ready(function() {
 
 
 
-  tabletClose.on('click', function(e) {
+  storeClose.on('click', function(e) {
     e.preventDefault();
 
-    tabletHeader.css('display', 'none');
-  });
-
-  mobileClose.on('click', function(e) {
-    e.preventDefault();
-
-    mobileHeader.css('display', 'none');
+    storeHeader.css('display', 'none');
   });
 
 

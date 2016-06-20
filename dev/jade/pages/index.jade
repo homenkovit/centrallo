@@ -29,6 +29,7 @@ block content
           button.notes-header__button Add to my Centrallo
           button.notes-header__button.notes-header__button_share.share-btn Share
       article.note.note_priority
+        .note__icon
         .note__wrap
           section.note__content
             form.form_checklist(action="#")
@@ -54,6 +55,7 @@ block content
               a.note__copy-link(href="#")
                 span http://cll.io/a6lnu
       article.note
+        .note__icon
         .note__wrap
           section.note__content
             a.list(href="#")
@@ -73,6 +75,7 @@ block content
               a.note__copy-link(href="#")
                 span http://cll.io/a6lnu
       article.note
+        .note__icon
         .note__wrap
           section.note__content
             ul.media
@@ -93,6 +96,7 @@ block content
               a.note__copy-link(href="#")
                 span http://cll.io/a6lnu
       article.note
+        .note__icon
         .note__wrap
           section.note__content
             p.note__paragraph The Dark Knight Rises is a 2012 British-American superhero film directed by Christopher Nolan, who co-wrote the screenplay with his brother Jonathan Nolan, and the story with David S. Goyer. Featuring the DC Comics character Batman, the film is the final installment in Nolan's Batman film trilogy, and the sequel to Batman Begins (2005) and The Dark Knight (2008). Christian Bale reprises the lead role of Bruce Wayne/Batman, with a returning cast of allies: Michael Caine as Alfred Pennyworth, Gary Oldman as James Gordon, and Morgan Freeman as Lucius Fox. The film introduces Selina Kyle (Anne Hathaway), a sly, morally ambiguous cat burglar, and Bane (Tom Hardy), a revolutionary bent on destroying Gotham City who forces an older Bruce Wayne to come out of retirement and become Batman again.
@@ -120,15 +124,15 @@ block content
             ul.files
               li.files__item
                 a.files__link.files__link_dropbox(href="#") 
-                  img(src="images/db.png")
+                  img(src="images/db.svg")
                   p logo_final.eps
               li.files__item
                 a.files__link.files__link_skydrive(href="#") 
-                  img(src="images/skydrive.png")
+                  img(src="images/skydrive.svg")
                   p photos_summer.zip
               li.files__item
                 a.files__link.files__link_doc(href="#") 
-                  img(src="images/doc.png")
+                  img(src="images/doc.svg")
                   p work_…hard.doc
           section.note__bottom
             p.note__date Jan 12
@@ -137,11 +141,13 @@ block content
               a.note__copy-link(href="#")
                 span http://cll.io/a6lnu
       article.note.note_protected
+        .note__icon
         .note__wrap
           section.note__bottom
             p.note__date Nov 22
             p.note__status Protected
       article.note.note_archived
+        .note__icon
         .note__wrap
           section.note__bottom
             p.note__date Nov 21

@@ -33,7 +33,7 @@
        padding-right: 8px
        width: 14px
        height: 14px
-       background-image: resolve('share.png')
+       background-image: resolve('share.svg')
        background-repeat: no-repeat
        background-size: 14px 14px
 
@@ -45,7 +45,15 @@
   border-radius: 5px
   margin: 15px 0
   position: relative
-  &_protected, &_archived, &_priority
+  &__icon
+    color: #ffffff
+    position: absolute
+    top: 0
+    right: 0
+    width: 48px
+    height: 48px
+    border-top-right-radius: 5px
+    overflow: hidden
     &::before, &::after
       content: ''
       display: block
@@ -64,29 +72,32 @@
   &_protected
     .note__status
       color: $links-color
-    &::before
-      border-color: transparent #3c434a transparent
-    &::after
-      background-image: resolve('lock.png')
-      width: width('lock.png')
-      height: height('lock.png')
+    .note__icon
+      &::before
+        border-color: transparent #3c434a transparent
+      &::after
+        background-image: resolve('lock.svg')
+        width: width('lock.svg')
+        height: height('lock.svg')
   &_archived
     opacity: 0.7
     .note__status
       color: #858585
-    &::before
-      border-color: transparent #979da3 transparent
-    &::after
-      background-image: resolve('archive.png')
-      width: width('archive.png')
-      height: height('archive.png')
+    .note__icon
+      &::before
+        border-color: transparent #979da3 transparent
+      &::after
+        background-image: resolve('archive.svg')
+        width: width('archive.svg')
+        height: height('archive.svg')
   &_priority
-    &::before
-      border-color: transparent #ef4b2b transparent
-    &::after
-      background-image: resolve('star.png')
-      width: width('star.png')
-      height: height('star.png')
+    .note__icon
+      &::before
+        border-color: transparent #ef4b2b transparent
+      &::after
+        background-image: resolve('star.svg')
+        width: width('star.svg')
+        height: height('star.svg')
   &__wrap
     padding: 0 30px
   &__content
@@ -105,13 +116,13 @@
     display: block
     background-repeat: no-repeat
   &__share
-    background-image: resolve('share.png')
-    width: width('share.png')
-    height: height('share.png')
+    background-image: resolve('share.svg')
+    width: width('share.svg')
+    height: height('share.svg')
   &__copy-link
-    background-image: resolve('copy-link.png')
-    width: width('copy-link.png')
-    height: height('copy-link.png')
+    background-image: resolve('copy-link.svg')
+    width: width('copy-link.svg')
+    height: height('copy-link.svg')
     position: relative
     display: inline
     span
@@ -149,6 +160,7 @@
   &__paragraph
     color: $text-color
     line-height: 26px
+    padding-top: 18px
     margin-bottom: 30px
 
 .form_checklist
@@ -189,9 +201,9 @@
   top: 2px
   left: -23px
   transition: all .2s
-  background-image: resolve('check.png')
-  width: width('check.png')
-  height: height('check.png')
+  background-image: resolve('check.svg')
+  width: width('check.svg')
+  height: height('check.svg')
 
 [type="checkbox"]:not(:checked) + label:after 
   opacity: 0
@@ -234,11 +246,11 @@
     top: 50%
     left: 0
     transform: translateY(-60%)
-    background-image: resolve('list.png')
-    width: width('list.png')
-    height: height('list.png')
-  &:hover::before
     background-image: resolve('list.svg')
+    width: width('list.svg')
+    height: height('list.svg')
+  &:hover::before
+    background-image: resolve('list_hover.svg')
   &__title
     flex: 1
     color: $titles-text-color

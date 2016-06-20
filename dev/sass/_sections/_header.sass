@@ -15,13 +15,15 @@
   & > a
     text-decoration: underline
 
-.tablet-header, .mobile-header
+// .tablet-header, .mobile-header
+.store-header
   display: none
   background-color: $links-color
   color: white
   &__wrap
     @extend .main-header__wrap
-.tablet, .mobile
+// .tablet, .mobile
+.store
   &__logo
     height: 33px
   &__logo, &__text, &__buttons
@@ -36,39 +38,37 @@
     font-size: 14px
     font-weight: 700
   &__close
-    background-image: resolve('close.png')
-    width: width('close.png')
-    height: height('close.png')
+    background-image: resolve('close.svg')
+    width: width('close.svg')
+    height: height('close.svg')
+    margin-left: 40px
   &__download
     height: 28px
+    width: 110px
+    font-size: 13px
     border: none
     border-radius: 3px
     color: #00adff
     background-color: white
     cursor: pointer
-.tablet
-  &__desc
+  &__desc_tablet
     font-size: 12px
-  &__close
-    margin-left: 40px
-  &__download
-    width: 110px
-    font-size: 13px
-.mobile
-  &__desc
+  &__desc_mobile
     font-size: 11px
-  &__close
-    margin-left: 12px
-  &__download
-    width: 90px
-    font-size: 12px
 .logo_tablet, .logo_mobile
+  width: 32px
+  height: 32px
+  background-color: #2e3439
+  position: relative
   img
-    width: 100%
-    height: 100%
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: width('logo_mobile.svg')
+    height: height('logo_mobile.svg')
+    background-position: center center
 .logo_tablet
-  width: width('logo_tablet.png')
-  height: height('logo_tablet.png')
+  border-radius: 8px
 .logo_mobile
-  width: width('logo_mobile.png')
-  height: height('logo_mobile.png')
+  border-radius: 50%

@@ -15,9 +15,14 @@
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
-  .tablet-header
+  .store-header
     display: block
-
+  .store
+    &__desc_mobile
+      display: none
+  .logo_mobile
+    display: none
+  
   .note
     &_protected, &_archived
       display: none
@@ -77,10 +82,22 @@
   .container
     padding: 0 15px
 
-  .mobile-header
-    display: block
-  .tablet-header
-    display: none
+  .store
+    &__desc
+      &_tablet
+        display: none
+      &_mobile
+        display: block
+    &__close
+      margin-left: 12px
+    &__download
+      width: 90px
+      font-size: 12px
+  .logo
+    &_tablet
+      display: none
+    &_mobile
+      display: block
     
   .menu_log-in
     padding-left: 0

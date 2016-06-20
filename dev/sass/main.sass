@@ -1,7 +1,7 @@
 // -----------------------Imports-----------------------
 
 @import "./_common/_vars"
-@import "./_common/_mixins"
+// @import "./_common/_mixins"
 @import "./_common/_fonts"
 //@import "./_common/_sprite" // Uncomment after the sprite generation
 
@@ -18,7 +18,7 @@ html, body
 
 body
   font: 14px $content-font
-  -webkit-font-smoothing: antialiased
+  font-smoothing: antialiased
 
 table
   border-collapse: collapse
@@ -80,13 +80,13 @@ a
     &_tw, &_fb
       background-repeat: no-repeat
     &_tw
-      background-image: resolve('tw.png')
-      width: width('tw.png')
-      height: height('tw.png')
+      background-image: resolve('tw.svg')
+      width: width('tw.svg')
+      height: height('tw.svg')
     &_fb
-      background-image: resolve('fb.png')
-      width: width('fb.png')
-      height: height('fb.png')
+      background-image: resolve('fb.svg')
+      width: width('fb.svg')
+      height: height('fb.svg')
   &_log-in
     .menu__link
       color: white
